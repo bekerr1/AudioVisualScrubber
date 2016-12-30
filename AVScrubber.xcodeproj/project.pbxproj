@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8462F12CA6D2D90E6DF1A649 /* Pods_AVScrubberTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6530CE9F89B0BCA8A2DECF8E /* Pods_AVScrubberTests.framework */; };
+		A8449442A2C5F489E794C1DA /* Pods_AVScrubber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D9558334171BF2367B9118 /* Pods_AVScrubber.framework */; };
 		F4BCFACA1E10E7C00056AA60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAC91E10E7C00056AA60 /* AppDelegate.swift */; };
-		F4BCFACC1E10E7C00056AA60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFACB1E10E7C00056AA60 /* ViewController.swift */; };
 		F4BCFACF1E10E7C00056AA60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFACD1E10E7C00056AA60 /* Main.storyboard */; };
 		F4BCFAD11E10E7C00056AA60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFAD01E10E7C00056AA60 /* Assets.xcassets */; };
 		F4BCFAD41E10E7C00056AA60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFAD21E10E7C00056AA60 /* LaunchScreen.storyboard */; };
 		F4BCFADF1E10E7C00056AA60 /* AVScrubberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFADE1E10E7C00056AA60 /* AVScrubberTests.swift */; };
+		F4BCFAEA1E10E8100056AA60 /* AVScrubberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAE91E10E8100056AA60 /* AVScrubberView.swift */; };
+		F4BCFAEC1E1189470056AA60 /* AVNoAudioLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAEB1E1189470056AA60 /* AVNoAudioLabel.swift */; };
+		F4BCFAEE1E1197FD0056AA60 /* AVScrubberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAED1E1197FD0056AA60 /* AVScrubberModel.swift */; };
+		F4BCFAF11E1598F60056AA60 /* trimmedMP3-45.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFAEF1E1598F60056AA60 /* trimmedMP3-45.m4a */; };
+		F4BCFAF21E1598F60056AA60 /* trimmedMP3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F4BCFAF01E1598F60056AA60 /* trimmedMP3.m4a */; };
+		F4BCFAF41E15D4000056AA60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAF31E15D4000056AA60 /* ViewController.swift */; };
+		F4BCFAF61E1651280056AA60 /* AVScrubberHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAF51E1651280056AA60 /* AVScrubberHeaderView.swift */; };
+		F4BCFAF81E16526E0056AA60 /* AVScrubberPlayheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAF71E16526E0056AA60 /* AVScrubberPlayheadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		118E81C543FCBA6679933353 /* Pods-AVScrubber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVScrubber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AVScrubber/Pods-AVScrubber.debug.xcconfig"; sourceTree = "<group>"; };
+		3859B6A5A4CD61ED2E77E063 /* Pods-AVScrubberTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVScrubberTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AVScrubberTests/Pods-AVScrubberTests.release.xcconfig"; sourceTree = "<group>"; };
+		6530CE9F89B0BCA8A2DECF8E /* Pods_AVScrubberTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVScrubberTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF3D11F503C3141FAFDDEF3 /* Pods-AVScrubberTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVScrubberTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AVScrubberTests/Pods-AVScrubberTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C5CACA6EFAA67CDCB213545 /* Pods-AVScrubber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVScrubber.release.xcconfig"; path = "Pods/Target Support Files/Pods-AVScrubber/Pods-AVScrubber.release.xcconfig"; sourceTree = "<group>"; };
+		D8D9558334171BF2367B9118 /* Pods_AVScrubber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVScrubber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BCFAC61E10E7C00056AA60 /* AVScrubber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVScrubber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BCFAC91E10E7C00056AA60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4BCFACB1E10E7C00056AA60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4BCFACE1E10E7C00056AA60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4BCFAD01E10E7C00056AA60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4BCFAD31E10E7C00056AA60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +50,14 @@
 		F4BCFADA1E10E7C00056AA60 /* AVScrubberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVScrubberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BCFADE1E10E7C00056AA60 /* AVScrubberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVScrubberTests.swift; sourceTree = "<group>"; };
 		F4BCFAE01E10E7C00056AA60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4BCFAE91E10E8100056AA60 /* AVScrubberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberView.swift; sourceTree = "<group>"; };
+		F4BCFAEB1E1189470056AA60 /* AVNoAudioLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVNoAudioLabel.swift; sourceTree = "<group>"; };
+		F4BCFAED1E1197FD0056AA60 /* AVScrubberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberModel.swift; sourceTree = "<group>"; };
+		F4BCFAEF1E1598F60056AA60 /* trimmedMP3-45.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "trimmedMP3-45.m4a"; sourceTree = "<group>"; };
+		F4BCFAF01E1598F60056AA60 /* trimmedMP3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = trimmedMP3.m4a; sourceTree = "<group>"; };
+		F4BCFAF31E15D4000056AA60 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4BCFAF51E1651280056AA60 /* AVScrubberHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberHeaderView.swift; sourceTree = "<group>"; };
+		F4BCFAF71E16526E0056AA60 /* AVScrubberPlayheadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberPlayheadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8449442A2C5F489E794C1DA /* Pods_AVScrubber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +73,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8462F12CA6D2D90E6DF1A649 /* Pods_AVScrubberTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		261993006B7D7BEB468E7935 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				118E81C543FCBA6679933353 /* Pods-AVScrubber.debug.xcconfig */,
+				8C5CACA6EFAA67CDCB213545 /* Pods-AVScrubber.release.xcconfig */,
+				6EF3D11F503C3141FAFDDEF3 /* Pods-AVScrubberTests.debug.xcconfig */,
+				3859B6A5A4CD61ED2E77E063 /* Pods-AVScrubberTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9BACF1B80181E7C6E5B28959 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8D9558334171BF2367B9118 /* Pods_AVScrubber.framework */,
+				6530CE9F89B0BCA8A2DECF8E /* Pods_AVScrubberTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4BCFABD1E10E7C00056AA60 = {
 			isa = PBXGroup;
 			children = (
 				F4BCFAC81E10E7C00056AA60 /* AVScrubber */,
 				F4BCFADD1E10E7C00056AA60 /* AVScrubberTests */,
 				F4BCFAC71E10E7C00056AA60 /* Products */,
+				261993006B7D7BEB468E7935 /* Pods */,
+				9BACF1B80181E7C6E5B28959 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,8 +123,15 @@
 		F4BCFAC81E10E7C00056AA60 /* AVScrubber */ = {
 			isa = PBXGroup;
 			children = (
+				F4BCFAEF1E1598F60056AA60 /* trimmedMP3-45.m4a */,
+				F4BCFAF01E1598F60056AA60 /* trimmedMP3.m4a */,
 				F4BCFAC91E10E7C00056AA60 /* AppDelegate.swift */,
-				F4BCFACB1E10E7C00056AA60 /* ViewController.swift */,
+				F4BCFAF31E15D4000056AA60 /* ViewController.swift */,
+				F4BCFAE91E10E8100056AA60 /* AVScrubberView.swift */,
+				F4BCFAED1E1197FD0056AA60 /* AVScrubberModel.swift */,
+				F4BCFAEB1E1189470056AA60 /* AVNoAudioLabel.swift */,
+				F4BCFAF51E1651280056AA60 /* AVScrubberHeaderView.swift */,
+				F4BCFAF71E16526E0056AA60 /* AVScrubberPlayheadView.swift */,
 				F4BCFACD1E10E7C00056AA60 /* Main.storyboard */,
 				F4BCFAD01E10E7C00056AA60 /* Assets.xcassets */,
 				F4BCFAD21E10E7C00056AA60 /* LaunchScreen.storyboard */,
@@ -103,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4BCFAE31E10E7C00056AA60 /* Build configuration list for PBXNativeTarget "AVScrubber" */;
 			buildPhases = (
+				C809AC43C1C7B2AD744CC7BC /* [CP] Check Pods Manifest.lock */,
 				F4BCFAC21E10E7C00056AA60 /* Sources */,
 				F4BCFAC31E10E7C00056AA60 /* Frameworks */,
 				F4BCFAC41E10E7C00056AA60 /* Resources */,
+				5E6464D32F9749D904E4A4F0 /* [CP] Embed Pods Frameworks */,
+				0259165CA8522EC1DDBDEC7B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4BCFAE61E10E7C00056AA60 /* Build configuration list for PBXNativeTarget "AVScrubberTests" */;
 			buildPhases = (
+				011F1F006E9C3EEFADAEC30F /* [CP] Check Pods Manifest.lock */,
 				F4BCFAD61E10E7C00056AA60 /* Sources */,
 				F4BCFAD71E10E7C00056AA60 /* Frameworks */,
 				F4BCFAD81E10E7C00056AA60 /* Resources */,
+				8F6EE2268669553856C4D362 /* [CP] Embed Pods Frameworks */,
+				025B5D16013275CA6375FE26 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,8 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4BCFAD41E10E7C00056AA60 /* LaunchScreen.storyboard in Resources */,
+				F4BCFAF11E1598F60056AA60 /* trimmedMP3-45.m4a in Resources */,
 				F4BCFAD11E10E7C00056AA60 /* Assets.xcassets in Resources */,
 				F4BCFACF1E10E7C00056AA60 /* Main.storyboard in Resources */,
+				F4BCFAF21E1598F60056AA60 /* trimmedMP3.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,13 +257,111 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		011F1F006E9C3EEFADAEC30F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0259165CA8522EC1DDBDEC7B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AVScrubber/Pods-AVScrubber-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		025B5D16013275CA6375FE26 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AVScrubberTests/Pods-AVScrubberTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E6464D32F9749D904E4A4F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AVScrubber/Pods-AVScrubber-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F6EE2268669553856C4D362 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AVScrubberTests/Pods-AVScrubberTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C809AC43C1C7B2AD744CC7BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F4BCFAC21E10E7C00056AA60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4BCFACC1E10E7C00056AA60 /* ViewController.swift in Sources */,
+				F4BCFAF41E15D4000056AA60 /* ViewController.swift in Sources */,
+				F4BCFAEE1E1197FD0056AA60 /* AVScrubberModel.swift in Sources */,
+				F4BCFAEA1E10E8100056AA60 /* AVScrubberView.swift in Sources */,
 				F4BCFACA1E10E7C00056AA60 /* AppDelegate.swift in Sources */,
+				F4BCFAF81E16526E0056AA60 /* AVScrubberPlayheadView.swift in Sources */,
+				F4BCFAF61E1651280056AA60 /* AVScrubberHeaderView.swift in Sources */,
+				F4BCFAEC1E1189470056AA60 /* AVNoAudioLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +498,7 @@
 		};
 		F4BCFAE41E10E7C00056AA60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 118E81C543FCBA6679933353 /* Pods-AVScrubber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CN6KC63QNP;
@@ -352,6 +512,7 @@
 		};
 		F4BCFAE51E10E7C00056AA60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C5CACA6EFAA67CDCB213545 /* Pods-AVScrubber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CN6KC63QNP;
@@ -365,6 +526,7 @@
 		};
 		F4BCFAE71E10E7C00056AA60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF3D11F503C3141FAFDDEF3 /* Pods-AVScrubberTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -380,6 +542,7 @@
 		};
 		F4BCFAE81E10E7C00056AA60 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3859B6A5A4CD61ED2E77E063 /* Pods-AVScrubberTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -412,6 +575,7 @@
 				F4BCFAE51E10E7C00056AA60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4BCFAE61E10E7C00056AA60 /* Build configuration list for PBXNativeTarget "AVScrubberTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +584,7 @@
 				F4BCFAE81E10E7C00056AA60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
