@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVScrubber/AVScrubberModel.swift"
-            timestampString = "504778205.151327"
+            timestampString = "505033672.838221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "iterateBufferData(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVScrubber/AVScrubberModel.swift"
-            timestampString = "504778205.151327"
+            timestampString = "505033672.838221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "testAudioProperties(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVScrubber/AVScrubberModel.swift"
-            timestampString = "504778205.151327"
+            timestampString = "505033672.838221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "parseBufferData(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVScrubber/AVScrubberModel.swift"
-            timestampString = "504778205.151327"
+            timestampString = "505033672.838221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "processAudioData(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,12 +74,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AVScrubber/AVScrubberModel.swift"
-            timestampString = "504778205.151327"
+            timestampString = "505033672.838221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "parseBufferData(_:_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AVScrubber/AVScrubberView.swift"
+            timestampString = "505033646.948963"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "init(frame:scrollOrientation:audioFileURLs:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,11 +12,13 @@
  
 */
 
+import UIKit
 import Foundation
 import AVFoundation
 import Accelerate
 
-struct AVScrubberModel {
+
+struct AVSampleProcessingModel {
     
     var bufferCap: AVAudioFrameCount = 7056
     var noiseFloor: Float = -40
@@ -27,13 +29,38 @@ struct AVScrubberModel {
     var processedData: [Float]!
     
     ///Screen Pts and Real Seconds will be translated into ScreenPts / RealSecond.  Represents how many screen pts will be utilized for each second of audio.
+    init?(screenPts pts: CGFloat, realSeconds sec: Int, audioSource src: URL?) {
+        screenPts = pts
+        realSeconds = sec
+        screenPtPerRealSecond = Double(screenPts) / Double(realSeconds)
+        
+        if let url = src {
+            do {
+                let audioFile = try AVAudioFile(forReading: url)
+                samplesPerScreenPt = (audioFile.processingFormat.sampleRate * Double(audioFile.processingFormat.channelCount)) / screenPtPerRealSecond
+                bufferCap = AVAudioFrameCount(samplesPerScreenPt) * AVAudioFrameCount(2.0)
+                processedData = iterateBufferData(audioFile)
+                print("Audio processed - data set in model.")
+            } catch {
+                print("Invlaid URL for audio file.")
+                return nil
+            }
+        }
+    }
+    
+    ///Screen Pts and Real Seconds will be translated into ScreenPts / RealSecond.  Represents how many screen pts will be utilized for each second of audio.
     init(screenPts pts: CGFloat, realSeconds sec: Int) {
         screenPts = pts
         realSeconds = sec
         screenPtPerRealSecond = Double(screenPts) / Double(realSeconds)
     }
+
     
-    mutating func processAudioData(_ url: URL) {
+    func drawSamples(using frame: CGRect) -> AVSamplesView {
+        return AVSamplesView(withSamples: processedData, referenceFrame: frame)
+    }
+    
+    mutating func processAudioData(_ url: URL) -> Bool {
         
         do {
             let audioFile = try AVAudioFile(forReading: url)
@@ -41,9 +68,11 @@ struct AVScrubberModel {
             bufferCap = AVAudioFrameCount(samplesPerScreenPt) * AVAudioFrameCount(2.0)
             processedData = iterateBufferData(audioFile)
             print("Audio processed - data set in model.")
+            return true
         } catch {
             print("Invlaid URL for audio file.")
         }
+        return false
     }
     
     mutating func iterateBufferData(_ audioFile: AVAudioFile) -> [Float] {

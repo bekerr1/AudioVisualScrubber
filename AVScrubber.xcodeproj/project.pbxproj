@@ -22,6 +22,8 @@
 		F4BCFAF41E15D4000056AA60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAF31E15D4000056AA60 /* ViewController.swift */; };
 		F4BCFAF61E1651280056AA60 /* AVScrubberHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAF51E1651280056AA60 /* AVScrubberHeaderView.swift */; };
 		F4BCFAF81E16526E0056AA60 /* AVScrubberPlayheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAF71E16526E0056AA60 /* AVScrubberPlayheadView.swift */; };
+		F4BCFAFA1E19A44F0056AA60 /* AVScrubberScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAF91E19A44F0056AA60 /* AVScrubberScrollView.swift */; };
+		F4BCFAFC1E19BFB20056AA60 /* AVSamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAFB1E19BFB20056AA60 /* AVSamplesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		F4BCFAF31E15D4000056AA60 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4BCFAF51E1651280056AA60 /* AVScrubberHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberHeaderView.swift; sourceTree = "<group>"; };
 		F4BCFAF71E16526E0056AA60 /* AVScrubberPlayheadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberPlayheadView.swift; sourceTree = "<group>"; };
+		F4BCFAF91E19A44F0056AA60 /* AVScrubberScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberScrollView.swift; sourceTree = "<group>"; };
+		F4BCFAFB1E19BFB20056AA60 /* AVSamplesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVSamplesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +132,12 @@
 				F4BCFAC91E10E7C00056AA60 /* AppDelegate.swift */,
 				F4BCFAF31E15D4000056AA60 /* ViewController.swift */,
 				F4BCFAE91E10E8100056AA60 /* AVScrubberView.swift */,
+				F4BCFAFB1E19BFB20056AA60 /* AVSamplesView.swift */,
 				F4BCFAED1E1197FD0056AA60 /* AVScrubberModel.swift */,
 				F4BCFAEB1E1189470056AA60 /* AVNoAudioLabel.swift */,
 				F4BCFAF51E1651280056AA60 /* AVScrubberHeaderView.swift */,
 				F4BCFAF71E16526E0056AA60 /* AVScrubberPlayheadView.swift */,
+				F4BCFAF91E19A44F0056AA60 /* AVScrubberScrollView.swift */,
 				F4BCFACD1E10E7C00056AA60 /* Main.storyboard */,
 				F4BCFAD01E10E7C00056AA60 /* Assets.xcassets */,
 				F4BCFAD21E10E7C00056AA60 /* LaunchScreen.storyboard */,
@@ -355,12 +361,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BCFAFC1E19BFB20056AA60 /* AVSamplesView.swift in Sources */,
 				F4BCFAF41E15D4000056AA60 /* ViewController.swift in Sources */,
 				F4BCFAEE1E1197FD0056AA60 /* AVScrubberModel.swift in Sources */,
 				F4BCFAEA1E10E8100056AA60 /* AVScrubberView.swift in Sources */,
 				F4BCFACA1E10E7C00056AA60 /* AppDelegate.swift in Sources */,
 				F4BCFAF81E16526E0056AA60 /* AVScrubberPlayheadView.swift in Sources */,
 				F4BCFAF61E1651280056AA60 /* AVScrubberHeaderView.swift in Sources */,
+				F4BCFAFA1E19A44F0056AA60 /* AVScrubberScrollView.swift in Sources */,
 				F4BCFAEC1E1189470056AA60 /* AVNoAudioLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
