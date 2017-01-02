@@ -51,6 +51,7 @@ class AVScrubberView: UIView {
     var audioFiles: [URL] = []
     var sampleViews: [AVSamplesView] = []
     var baseSubviewFrame: CGRect
+    var scrubberViewModel: AVScrubberViewModel
     
     let realSeconds = 15
     lazy var scrubberScreenPts: CGFloat = {
@@ -63,6 +64,7 @@ class AVScrubberView: UIView {
         baseSubviewFrame = CGRect(x: 0, y: 0, width: f.width, height: f.height)
         scrubberScrollView = AVScrubberScrollView(frame: baseSubviewFrame)
         noAudioLabel = AVNoAudioLabel(frame: CGRect(x: 0, y: 0, width: f.width + 300, height: f.height))
+        scrubberViewModel = AVScrubberViewModel()
         
         super.init(frame: f)
         
@@ -98,6 +100,7 @@ class AVScrubberView: UIView {
         baseSubviewFrame = CGRect(x: 0, y: 0, width: f.width, height: f.height)
         scrubberScrollView = AVScrubberScrollView(frame: baseSubviewFrame)
         noAudioLabel = AVNoAudioLabel(frame: CGRect(x: 0, y: 0, width: f.width + 300, height: f.height))
+        scrubberViewModel = AVScrubberViewModel()
         
         super.init(frame: f)
         
