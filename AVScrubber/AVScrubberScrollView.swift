@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import RxSwift
 
 class AVScrubberScrollView: UIScrollView {
 
-    
     
     override init(frame: CGRect) {
         print("CustomScrollInit")

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         let audioFileURL = URL(fileURLWithPath: Bundle.main.path(forResource: "trimmedMP3-45", ofType: "m4a")!)
         //let fakeURL = URL(fileURLWithPath: "FalsePath.")
         scrubber = AVScrubberView(frame: CGRect(x: 0, y: view.frame.size.height/2 - 50, width: view.frame.size.width, height: 100), audioFileURL: audioFileURL)
+        scrubber.changeScrubberOrientation(to: .middle)
         view.addSubview(scrubber)
     }
     

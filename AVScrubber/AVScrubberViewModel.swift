@@ -7,9 +7,29 @@
 //
 
 import Foundation
+import RxSwift
 
-
-struct AVScrubberViewModel {
+class AVScrubberViewModel {
+    
+    var scrubberOffsetAmount: Variable<UIEdgeInsets>
+    var scrubberOffset: UIEdgeInsets = UIEdgeInsets.zero {
+        didSet {
+            scrubberOffsetAmount.value = scrubberOffset
+        }
+    }
+    
+    init() {
+        scrubberOffsetAmount = Variable(UIEdgeInsets.zero)
+    }
     
     
+    
+}
+
+
+
+struct AVSampleProcessingViewModel {
+    
+    var audioCount = 0
+    var audioFiles: [URL] = []
 }

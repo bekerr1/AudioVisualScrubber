@@ -25,6 +25,7 @@
 		F4BCFAFA1E19A44F0056AA60 /* AVScrubberScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAF91E19A44F0056AA60 /* AVScrubberScrollView.swift */; };
 		F4BCFAFC1E19BFB20056AA60 /* AVSamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAFB1E19BFB20056AA60 /* AVSamplesView.swift */; };
 		F4BCFAFE1E1AE80D0056AA60 /* AVScrubberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAFD1E1AE80D0056AA60 /* AVScrubberViewModel.swift */; };
+		F4BCFB001E1AFCFB0056AA60 /* CustomReactiveExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCFAFF1E1AFCFB0056AA60 /* CustomReactiveExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		F4BCFAF91E19A44F0056AA60 /* AVScrubberScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberScrollView.swift; sourceTree = "<group>"; };
 		F4BCFAFB1E19BFB20056AA60 /* AVSamplesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVSamplesView.swift; sourceTree = "<group>"; };
 		F4BCFAFD1E1AE80D0056AA60 /* AVScrubberViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVScrubberViewModel.swift; sourceTree = "<group>"; };
+		F4BCFAFF1E1AFCFB0056AA60 /* CustomReactiveExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReactiveExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				F4BCFAEF1E1598F60056AA60 /* trimmedMP3-45.m4a */,
 				F4BCFAF01E1598F60056AA60 /* trimmedMP3.m4a */,
 				F4BCFAC91E10E7C00056AA60 /* AppDelegate.swift */,
+				F4BCFAFF1E1AFCFB0056AA60 /* CustomReactiveExtensions.swift */,
 				F4BCFAF31E15D4000056AA60 /* ViewController.swift */,
 				F4BCFAE91E10E8100056AA60 /* AVScrubberView.swift */,
 				F4BCFAFD1E1AE80D0056AA60 /* AVScrubberViewModel.swift */,
@@ -370,6 +373,7 @@
 				F4BCFAFE1E1AE80D0056AA60 /* AVScrubberViewModel.swift in Sources */,
 				F4BCFAEA1E10E8100056AA60 /* AVScrubberView.swift in Sources */,
 				F4BCFACA1E10E7C00056AA60 /* AppDelegate.swift in Sources */,
+				F4BCFB001E1AFCFB0056AA60 /* CustomReactiveExtensions.swift in Sources */,
 				F4BCFAF81E16526E0056AA60 /* AVScrubberPlayheadView.swift in Sources */,
 				F4BCFAF61E1651280056AA60 /* AVScrubberHeaderView.swift in Sources */,
 				F4BCFAFA1E19A44F0056AA60 /* AVScrubberScrollView.swift in Sources */,
