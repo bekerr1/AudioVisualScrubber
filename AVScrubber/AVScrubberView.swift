@@ -42,63 +42,34 @@ enum ScrubberShape {
     case rounded
 }
 
+enum AVProcessingState {
+    case waiting
+    case processing
+    case finished(Int)
+    case Error(String)
+}
 
 class AVScrubberView: UIView {
     
+    //Dispose
     var disposeBag: DisposeBag = DisposeBag()
     
-    //var scrubberModel: AVScrubberModel!
+    //Subviews
     var scrubberScrollView: AVScrubberScrollView!
     let noAudioLabel: AVNoAudioLabel!
-    
-    var scrubberShape: ScrubberShape = .rounded
-    var scrubberColor: ScrubberColor = .defaultWhite
-    
+    let scrubberHeaderView: AVScrubberHeaderView!
     var sampleViews: [AVSamplesView] = []
-    var baseSubviewFrame: CGRect
+    //ViewModel
     var scrubberViewModel: AVScrubberViewModel
-    
-    let realSeconds = 15
-    lazy var scrubberScreenPts: CGFloat = {
-        return self.frame.size.width/2
-    }()
-
-    
-    init(frame f: CGRect, scrollOrientation or: ScrollOrientation = .middle, audioFileURLs urls: URL...) {
-        
-        baseSubviewFrame = CGRect(x: 0, y: 0, width: f.width, height: f.height)
-        scrubberScrollView = AVScrubberScrollView(frame: baseSubviewFrame)
-        noAudioLabel = AVNoAudioLabel(frame: CGRect(x: 0, y: 0, width: f.width + 300, height: f.height))
-        scrubberViewModel = AVScrubberViewModel()
-        
-        
-        super.init(frame: f)
-        
-        //orientScrollView(or)
-        
-        for url in urls {
-            if FileManager.default.fileExists(atPath: url.path) {
-                print("File Exists, try to prcess.")
-//                if let validSampView = createSamplesView(from: url) {
-//                    sampleViews.append(validSampView)
-//                }
-            } else {
-                print("File was found to not exist at given path.")
-            }
+    //Other
+    var baseSubviewFrame: CGRect
+    var validAudioFiles: [URL] = []
+    var audioCount: Int {
+        didSet {
+            addLatestSamplesView()
         }
-        if sampleViews.isEmpty {
-            print("Could not obtain any sample views from given data")
-            addSubview(noAudioLabel)
-        }
-        insertSubview(scrubberScrollView, belowSubview: noAudioLabel)
-        finalAdjustments()
-        backgroundColor = UIColor.blue
-        
-        //scrubberScrollView.contentSize = CGRect(x: 0, y: 0, width: f.width + 300, height: f.height).size
-        //scrubberScrollView.addSubview(noAudioLabel)
-        //scrubberScrollView.zoomScale = 0.5
     }
-    
+    var audioProcessingState: AVProcessingState = .waiting
 
     init(frame f: CGRect, scrollOrientation or: ScrollOrientation = .middle, audioFileURL url: URL?) {
         
@@ -106,41 +77,33 @@ class AVScrubberView: UIView {
         scrubberScrollView = AVScrubberScrollView(frame: baseSubviewFrame)
         noAudioLabel = AVNoAudioLabel(frame: CGRect(x: 0, y: 0, width: f.width + 300, height: f.height))
         scrubberViewModel = AVScrubberViewModel()
+        scrubberHeaderView = AVScrubberHeaderView()
+        audioCount = 0
         
         super.init(frame: f)
         
-        //scrubberScrollView.contentInset = orientScrollVi ew(or)
-        //scrubberViewModel.scrubberOffset = orientScrollView(or)
+        scrubberViewModel.scrubberScreenPts = frame.size.width
+        addSampleView(from: url)
+        scrubberScrollView.contentInset = orientScrollView(or)
         
-        scrubberViewModel.scrubberOffsetAmount
-            .asObservable()            
-            .bindTo(scrubberScrollView.rx_inset)
+        //Observable with Bind To used - Questionable UI qualities?
+//        scrubberViewModel.scrubberOffsetAmount
+//            .asObservable()            
+//            .bindTo(scrubberScrollView.rx_inset)
+//            .addDisposableTo(disposeBag)
+        
+        //Driver with Drive Used - Driver Qualities guaranteed
+        scrubberViewModel.headerIsVisible
+            .asDriver()
+            .drive(scrubberHeaderView.rx.isHidden)
             .addDisposableTo(disposeBag)
         
-        if let goodAudio = url {
-            if FileManager.default.fileExists(atPath: goodAudio.path) {
-                print("File exists, try to process it!")
-//                if let sampleView = createSamplesView(from: goodAudio) {
-//                    sampleViews.append(sampleView)
-//                }
-                
-            } else {
-                print("File was found to not exist at given path.")
-            }
-        } else {
-            fatalError("Bad url - development specific fatal error.")
-        }
-        
-//        if sampleViews.isEmpty {
-//            print("Could not obtain any sample views from given data")
-//            addSubview(noAudioLabel)
-//        }
-        insertSubview(scrubberScrollView, belowSubview: noAudioLabel)
-        finalAdjustments()
+        addSubview(scrubberScrollView)
+        //finalAdjustments()
         backgroundColor = UIColor.blue
         
-        scrubberScrollView.contentSize = CGRect(x: 0, y: 0, width: f.width + 300, height: f.height).size
-        scrubberScrollView.addSubview(noAudioLabel)
+        //scrubberScrollView.contentSize = CGRect(x: 0, y: 0, width: f.width + 300, height: f.height).size
+        //scrubberScrollView.addSubview(noAudioLabel)
         //scrubberScrollView.zoomScale = 0.5
     }
     
@@ -164,21 +127,81 @@ class AVScrubberView: UIView {
     }
     
     
-    func finalAdjustments() {
-        for v in sampleViews {
-            v.adjustFrameToFit(totalAudioTracks: sampleViews.count)
-        }
+//    func finalAdjustments() {
+//        for v in sampleViews {
+//            v.adjustFrameToFit(totalAudioTracks: sampleViews.count)
+//        }
+//    }
+    
+    func addSampleView(from url: URL?) {
+        createSamplesView(from: url)
+        
     }
     
+    func createSamplesView(from url: URL?) {
+        
+        if let processedSamples = scrubberViewModel.processAudioFile(at: url) {
+            validAudioFiles.append(url!)
+            let newSampleView = AVSamplesView(withSamples: processedSamples, referenceFrame: baseSubviewFrame)
+            print(newSampleView.frame)
+            scrubberScrollView.contentSize = newSampleView.frame.size
+            sampleViews.append(newSampleView)
+            //finished processing successful here
+        } else {
+            //let e_mesg = "No Audio Samples Available."
+            //let newSampleView = AVSamplesView(withErrorMsg: e_msg)
+            print("Couldnt create samples from URL")
+            //Finished processing error here
+        }
+        audioCount += 1
+    }
     
+    func addLatestSamplesView() {
+        print("Should add new sampleview to scrollview as subview")
+        scrubberScrollView.addSubview(sampleViews.last!)
+    }
     
-    
-//    func createSamplesView(from url: URL) -> AVSamplesView? {
-//        
-//        if let audioData = AVSampleProcessingModel(screenPts: scrubberScreenPts, realSeconds: realSeconds, audioSource: url) {
-//            audioFiles.append(url)
-//            return audioData.drawSamples(using: baseSubviewFrame)
-//        }
-//        return nil
-//    }
+    func createBatchSamplesView(from urls: [URL]) {
+        print("Should be used when creating scrubber with multiple sample views")
+    }
 }
+
+
+
+
+//    init(frame f: CGRect, scrollOrientation or: ScrollOrientation = .middle, audioFileURLs urls: URL...) {
+//
+//        baseSubviewFrame = CGRect(x: 0, y: 0, width: f.width, height: f.height)
+//        scrubberScrollView = AVScrubberScrollView(frame: baseSubviewFrame)
+//        noAudioLabel = AVNoAudioLabel(frame: CGRect(x: 0, y: 0, width: f.width + 300, height: f.height))
+//        scrubberViewModel = AVScrubberViewModel()
+//        scrubberHeaderView = AVScrubberHeaderView()
+//
+//
+//        super.init(frame: f)
+//
+//        //orientScrollView(or)
+//
+//        for url in urls {
+//            if FileManager.default.fileExists(atPath: url.path) {
+//                print("File Exists, try to prcess.")
+////                if let validSampView = createSamplesView(from: url) {
+////                    sampleViews.append(validSampView)
+////                }
+//            } else {
+//                print("File was found to not exist at given path.")
+//            }
+//        }
+//        if sampleViews.isEmpty {
+//            print("Could not obtain any sample views from given data")
+//            addSubview(noAudioLabel)
+//        }
+//        insertSubview(scrubberScrollView, belowSubview: noAudioLabel)
+//        finalAdjustments()
+//        backgroundColor = UIColor.blue
+//
+//        //scrubberScrollView.contentSize = CGRect(x: 0, y: 0, width: f.width + 300, height: f.height).size
+//        //scrubberScrollView.addSubview(noAudioLabel)
+//        //scrubberScrollView.zoomScale = 0.5
+//    }
+
